@@ -1,0 +1,32 @@
+GET http://localhost:1234/chat
+
+
+
+###
+
+
+
+
+POST http://localhost:1234/chat/post
+
+
+
+
+
+
+
+###
+
+
+
+
+
+
+GET http://localhost:1234/chat/update_status
+
+
+
+
+
+
+###
