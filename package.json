@@ -1,6 +1,6 @@
 {
   "name": "chat-server",
-  "proxy": "http://localhost:1234",
+  "proxy": "https://chat-server-production-d84a.up.railway.app:1234",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
