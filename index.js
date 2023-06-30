@@ -35,6 +35,9 @@ app.use('/rooms',chatRouterRoomGet)
 const chatRouterRoomPost = require('./routes/chatroom_post.js')
 app.use('/postroom',chatRouterRoomPost)
 
+const chatRouterRoomDelete = require('./routes/chatroom_delete.js')
+app.use('/deleteroom',chatRouterRoomDelete)
+
 const chatRouterGet = require('./routes/chatget.js')
 app.use('/chat',chatRouterGet)
 
