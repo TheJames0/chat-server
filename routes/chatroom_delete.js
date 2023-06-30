@@ -12,12 +12,12 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
-  const collection = client.db('chat');
+  var collection;
 
     async function tryDeleteCollection(name) {
         try {
             
-            collection.drop()
+          client.db('chat').collection(name).drop()
           console.log("Deleting Collection");
         }
         catch (e)
