@@ -29,13 +29,16 @@ app.use(cors());
 
 app.use(express.json()) 
 
-const chatRouterGet = require('./routes/chatget.cjs')
+const chatRouterRoomGet = require('./routes/chatroom_get.js')
+app.use('/rooms',chatRouterRoomGet)
+
+const chatRouterGet = require('./routes/chatget.js')
 app.use('/chat',chatRouterGet)
 
-const chatRouterUpdate = require('./routes/chatupdate.cjs')
+const chatRouterUpdate = require('./routes/chatupdate.js')
 app.use('/chat/update_status',chatRouterUpdate)
 
-const chatRouterPost = require('./routes/chatpost.cjs')
+const chatRouterPost = require('./routes/chatpost.js')
 app.use('/chat/post',chatRouterPost)
 
 app.listen(1234);
