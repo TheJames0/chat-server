@@ -32,6 +32,9 @@ app.use(express.json())
 const chatRouterRoomGet = require('./routes/chatroom_get.js')
 app.use('/rooms',chatRouterRoomGet)
 
+const chatRouterRoomPost = require('./routes/chatroom_post.js')
+app.use('/postroom',chatRouterRoomPost)
+
 const chatRouterGet = require('./routes/chatget.js')
 app.use('/chat',chatRouterGet)
 
