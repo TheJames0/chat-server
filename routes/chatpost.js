@@ -12,10 +12,9 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
-const collection = client.db('chat').collection('chat1');
 
 
-    async function tryInsertData(data) {
+    async function tryInsertData(data,collection) {
         try {
             
           // Send a ping to confirm a successful connection
@@ -36,7 +35,8 @@ const collection = client.db('chat').collection('chat1');
 router.post('/', async function(req, res) {
     try
     {
-        await tryInsertData(req.body);
+        const collection = client.db('chat').collection(req.body.collection)
+        await tryInsertData(req.body,collection);
         console.log(req.body.name);
         console.log(req.body.message);
     }
