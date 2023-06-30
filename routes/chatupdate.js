@@ -12,14 +12,24 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
-const collection = client.db('chat').collection('chat1');
+const collection = client.db('chat');
 
 // Create a change stream
 const changeStream = collection.watch();
 var message = false;
 var success = true;
 // Listen to change events
-changeStream.on('change', async (change) => {message = true})
+changeStream.on('change', async (change) => {
+    if(change.operationType === 'invalidate')
+    {
+        console.log("collection dropped",change.ns.coll)
+    }
+    else
+    {
+        message = {collection:change.ns.coll,update:true}}
+    }
+    
+    )
     router.get('/', async (req,res) => 
     {
         success = true;

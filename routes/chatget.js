@@ -12,7 +12,7 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
-const collection = client.db('chat').collection('chat1');
+var collection;
 
 
 async function getData()
@@ -38,6 +38,7 @@ async function getData()
 router.get('/', async (req,res) => 
 {
     try {
+        collection = client.db('chat').collection(await req.query.collection);
         const messages = await getData()
         res.json(messages);
     }
