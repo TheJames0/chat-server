@@ -21,11 +21,15 @@ try {
   console.log("Connected to database");
 }
 
-
-//const test_entry = { name: 'cody', message: 'yge'};
-
 const cors = require('cors');
 app.use(cors());
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://thejames0.github.io'); // Replace '*' with the actual origin you want to allow
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 app.use(express.json()) 
 
