@@ -26,7 +26,6 @@ const client = new MongoClient(uri, {
 
 router.get('/', async (req,res) => 
 {
-    res.setHeader('Access-Control-Allow-Origin', 'https://thejames0.github.io');
     try {
         console.log("Attempt to get rooms")
         const messages = await getRooms()
