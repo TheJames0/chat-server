@@ -1,5 +1,6 @@
 {
   "name": "chat-server",
+  "proxy": "https://web-chat-server-o4qs.onrender.com:1234",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
